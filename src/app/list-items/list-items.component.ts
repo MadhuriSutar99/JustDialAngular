@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { AnyPtrRecord } from 'dns';
 
 @Component({
   selector: 'app-list-items',
@@ -9,17 +8,15 @@ import { AnyPtrRecord } from 'dns';
 })
 export class ListItemsComponent implements OnInit {
 
-  myData:any;
-  constructor(private depHttp:HttpClient ) 
-  {
+  myData: any;
+  constructor(private depHttp: HttpClient) {
     depHttp.get("https://reqres.in/api/users?page=2").
-    subscribe((data)=>{this.myData=data})
+      subscribe((data) => { this.myData = data })
 
-   }
+  }
 
-  ngOnInit(): void 
-  {
-  
+  ngOnInit(): void {
+
   }
 
 }

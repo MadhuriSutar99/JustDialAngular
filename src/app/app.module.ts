@@ -9,7 +9,27 @@ import { FootMenuComponent } from './foot-menu/foot-menu.component';
 import { MainContainerComponent } from './main-container/main-container.component';
 import { ListItemsComponent } from './list-items/list-items.component';
 import { ItemComponent } from './item/item.component';
-import {HttpClientModule}from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
+// import { Router, RouterModule, Routes } from '@angular/router';
+import { HomeComponent } from './home/home.component';
+import { ContactusComponent } from './contactus/contactus.component';
+import { RouterModule, Routes } from '@angular/router';
+
+const routesConfi: Routes = [
+  {
+    path: '',
+    component: HomeComponent
+  },
+  {
+    path: 'contactus',
+    component: ContactusComponent
+
+  },
+  {
+    path: 'list',
+    component: ListItemsComponent
+  }
+]
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,8 +42,10 @@ import {HttpClientModule}from '@angular/common/http';
     ItemComponent
   ],
   imports: [
+    
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot(routesConfi)
 
   ],
   providers: [],
